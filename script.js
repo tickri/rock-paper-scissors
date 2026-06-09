@@ -42,12 +42,7 @@ function playGame() {
       console.log("You lose! " + computerChoice + " beats " + humanChoice);
       computerScore++;
     }
-    console.log("your score: " + humanScore);
-    console.log("computers score: " + computerScore);
   }
-
-  const humanChoice = getHumanChoice();
-  const computerChoice = getComputerChoice();
 
   // Round 1
   playRound(getHumanChoice(), getComputerChoice());
@@ -62,6 +57,15 @@ function playGame() {
 
   console.log("your score: " + humanScore);
   console.log("computers score: " + computerScore);
+
+  // Final words declaring the winner
+  if (humanScore > computerScore) {
+    console.log("Congrats! You won the game!");
+  } else if (humanScore === computerScore) {
+    console.log("It's a tie! Try again!");
+  } else {
+    console.log("Damn! Computer won the game! Better luck next time...");
+  }
 }
 
 playGame();
